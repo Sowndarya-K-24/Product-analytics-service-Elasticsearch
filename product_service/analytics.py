@@ -14,7 +14,6 @@ class ProductAnalytics:
         logger.debug("ProductAnalytics initialized for index=%s host=%s", index, host)
 
     def get_top_n_expensive(self, n: int = 5) -> List[Dict[str, Any]]:
-        """Top N products sorted by price desc."""
         if n <= 0:
             return []
         body = {"size": n, "sort": [{"price": {"order": "desc"}}], "query": {"match_all": {}}}
@@ -23,12 +22,11 @@ class ProductAnalytics:
             hits = [h["_source"] for h in res["hits"]["hits"]]
             logger.info("Fetched top %d expensive products", n)
             return hits
-        except ElasticsearchException:
+        except TransportError:
             logger.exception("Failed to fetch top-n expensive products")
             raise
 
     def count_products_per_category(self) -> Dict[str, int]:
-        """Return a mapping category -> count (aggregation)."""
         body = {"size": 0, "aggs": {"by_category": {"terms": {"field": "category", "size": 1000}}}}
         try:
             res = self.client.search(index=self.index, body=body)
@@ -41,7 +39,6 @@ class ProductAnalytics:
             raise
 
     def avg_price_per_category(self) -> Dict[str, float]:
-        """Return a mapping category -> average price."""
         body = {
             "size": 0,
             "aggs": {
@@ -62,7 +59,6 @@ class ProductAnalytics:
             raise
 
     def search_by_name(self, keyword: str, size: int = 10) -> List[Dict[str, Any]]:
-        """Full-text search on 'name' field (match query)."""
         if not keyword:
             return []
         body = {"size": size, "query": {"match": {"name": {"query": keyword, "operator": "and"}}}}
@@ -76,7 +72,6 @@ class ProductAnalytics:
             raise
 
     def products_in_category_sorted(self, category: str, size: int = 50) -> List[Dict[str, Any]]:
-        """Retrieve all products in a given category sorted by price desc."""
         if not category:
             return []
         body = {
@@ -94,7 +89,6 @@ class ProductAnalytics:
             raise
 
     def categories_with_avg_price_above(self, threshold: float) -> List[str]:
-        """Return categories where avg(price) > threshold."""
         avgs = self.avg_price_per_category()
         ans = [cat for cat, avg in avgs.items() if (avg or 0.0) > threshold]
         logger.info("Categories with avg price > %s: %s", threshold, ans)
@@ -102,7 +96,6 @@ class ProductAnalytics:
 
     @staticmethod
     def compute_avg_from_list(products: List[Dict[str, Any]]) -> float:
-        """Pure helper for testing: compute average price from a list of product dicts."""
         if not products:
             return 0.0
         total = 0.0

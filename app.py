@@ -9,11 +9,9 @@ logger = setup_logger("app")
 
 app = Flask(__name__)
 
-# instantiate ES utilities
 ingestor = ESIngestor()
 analytics = ProductAnalytics()
 
-# ensure index present on startup
 try:
     ingestor.ensure_index()
 except Exception:
@@ -52,7 +50,6 @@ def search():
 @app.route("/products/category-stats", methods=["GET"])
 def category_stats():
     try:
-        # Get optional min_avg parameter
         min_avg = float(request.args.get("min_avg", 0))
         cats = analytics.categories_with_avg_price_above(min_avg)
         counts = analytics.count_products_per_category()
@@ -91,7 +88,6 @@ def create_product():
         return jsonify({"error": f"missing required fields: {missing}"}), 400
 
     try:
-        # coerce & validate price
         price = float(payload["price"])
     except (ValueError, TypeError):
         return jsonify({"error": "price must be numeric"}), 400
@@ -115,5 +111,4 @@ def create_product():
 
 
 if __name__ == "__main__":
-    # Do not enable debug mode for assessment; run using gunicorn or flask run in dev.
     app.run(host="0.0.0.0", port=5000)

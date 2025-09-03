@@ -5,6 +5,6 @@ es = Elasticsearch([ES_HOST], **ES_CLIENT_OPTIONS)
 
 try:
     info = es.info()
-    print("✅ Connected to Elasticsearch:", info)
+    print(" Connected to Elasticsearch:", info)
 except Exception as e:
-    print("❌ Failed:", e)
+    print(" Failed:", e)

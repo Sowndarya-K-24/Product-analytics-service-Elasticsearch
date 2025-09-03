@@ -9,11 +9,8 @@ logger = setup_logger(__name__)
 
 
 def _normalize_row(row: Dict[str, Any]) -> Dict[str, Any]:
-    """Normalize raw row data into canonical product dict."""
-    # cast price to float safely
     price = 0.0
     try:
-        # Some CSVs might provide price as empty string or None
         price_raw = row.get("price", 0) if isinstance(row, dict) else 0
         price = float(price_raw) if price_raw not in (None, "") else 0.0
     except (ValueError, TypeError):
@@ -60,7 +57,6 @@ def load_from_json(path: str) -> List[Dict[str, Any]]:
         raw = json.load(f)
 
     if isinstance(raw, dict):
-        # { "products": [...] } or single product
         if "products" in raw and isinstance(raw["products"], list):
             items = raw["products"]
         else:

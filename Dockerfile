@@ -1,4 +1,3 @@
-# Dockerfile - containerize Flask app (not Elasticsearch)
 FROM python:3.11-slim
 
 WORKDIR /app

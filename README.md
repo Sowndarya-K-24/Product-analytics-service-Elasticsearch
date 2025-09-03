@@ -131,14 +131,14 @@ python app.py
     }
   }
 }
-```
 
-Load Sample Data:
+
+**Load Sample Data:**
   You can use the Faker generator:
 
 python sample_data/generate_sample_data.py --count 50 --out sample_data/products.csv
 
-Ingest Sample Data:
+**Ingest Sample Data:**
 
 from product_service.loader import load_from_csv
 from product_service.ingestor import ESIngestor
@@ -148,9 +148,9 @@ ingestor = ESIngestor()
 ingestor.ingest(products, refresh=True)
 
 
-Flask API Endpoints:
+## Flask API Endpoints:
 
-1. Get Top N Expensive Products:
+**1. Get Top N Expensive Products:**
 
    * Endpoint: `/products/top-n`
    * Method: `GET`
@@ -166,7 +166,7 @@ Flask API Endpoints:
      }
     
 
-2. Search Products by Name:
+**2. Search Products by Name:**
 
    * Endpoint: `/products/search`
    * Method: `GET`
@@ -183,7 +183,7 @@ Flask API Endpoints:
      }
 
 
-3. Get Category Statistics:
+**3. Get Category Statistics:**
 
    * Endpoint: `/products/category-stats`
    * Method: `GET`
@@ -197,7 +197,7 @@ Flask API Endpoints:
        }
      
 
-4. Add a New Product:
+**4. Add a New Product:**
 
    * Endpoint: `/products`
    * Method: `POST`
@@ -210,7 +210,7 @@ Flask API Endpoints:
        "es_result": {...}
      }
 
-POST Example JSON Body:
+**POST Example JSON Body:**
 
 {
   "name": "Phone XYZ",
@@ -220,7 +220,7 @@ POST Example JSON Body:
 }
 
 
-Unit Tests:
+## Unit Tests:
 
 Purpose: Verify individual functions work correctly and detect regression errors.
 Run Tests:
@@ -228,25 +228,25 @@ Run Tests:
 pytest tests/test_loader.py
 pytest tests/test_analytics.py
 
-Example tests:
+**Example tests:**
 
 `_normalize_row` (loader.py)
 `get_top_n_expensive` (analytics.py)
 
 
-Logging:
+## Logging:
 
 * Logging is enabled using `product_service.utils.logging_setup`.
 * Console and file logging (if configured) include INFO, DEBUG, ERROR levels.
 
-Example log output:
+**Example log output:**
 
 
 2025-09-03 15:49:39,395 - product_service.analytics - INFO - Search by name returned 2 results for keyword=white
 2025-09-03 15:55:11,591 - app - ERROR - Failed to insert product via API
 
 
-Assumptions:
+## Assumptions:
 
 * Price can default to 0 if missing or invalid.
 * Product names are non-empty strings.
@@ -255,28 +255,37 @@ Assumptions:
 
 
 
-Git Workflow:
+## Git Workflow:
 
-1. Initialize Git repository:
+**1. Initialize Git repository:**
 
 git init
 
-2. Create feature branches:
+**2. Create feature branches:**
 
-git checkout -b feature/data-loader
-git checkout -b feature/flask-api
+**Branches created:**
 
+main → contains the stable final code.
 
-3. Make meaningful commits for each implemented feature.
-4. Create pull requests (local or on GitHub).
-5. Demonstrate merge conflict resolution and removal of sensitive files like `debug.log`.
+feature/flask-api → development of Flask REST API endpoints.
 
+feature/data-loader → development of product data loader and ingestion.
 
-Optional Features:
+**Commits:**
 
-* Dockerfile for containerized Flask + Elasticsearch client.
-* CI/CD workflow using GitHub Actions to run pytest automatically.
-* API authentication middleware (JWT or API key).
+Each branch contains small, meaningful commits (e.g., docstring update in app.py, improvements in loader.py).
+
+This demonstrates incremental development.
+
+**Pull Requests (PRs):**
+
+Created PRs from feature branches into main to simulate code review workflow.
+
+Example: PR for feature/flask-api into main shows API-related changes.
+
+**CI Integration:**
+
+A GitHub Actions workflow (ci.yml) is included to run tests automatically on each PR/commit.
 
 
 Example Queries and Outputs
@@ -307,5 +316,7 @@ Category Stats:
     "books": {"count": 5, "avg_price": 120.0}
   }
 }
+
+
 
 

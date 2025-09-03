@@ -6,7 +6,6 @@ from .config import LOG_FILE
 def setup_logger(name: str) -> logging.Logger:
     logger = logging.getLogger(name)
     if logger.handlers:
-        # already configured
         return logger
 
     logger.setLevel(logging.DEBUG)
