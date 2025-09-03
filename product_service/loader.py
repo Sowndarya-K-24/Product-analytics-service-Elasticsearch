@@ -73,3 +73,8 @@ def load_from_json(path: str) -> List[Dict[str, Any]]:
     products = [_normalize_row(item) for item in items]
     logger.info("Loaded %d products from JSON", len(products))
     return products
+
+'''
+This docstring is added for pull request comparison feature.
+No behavior is changed.
+'''
