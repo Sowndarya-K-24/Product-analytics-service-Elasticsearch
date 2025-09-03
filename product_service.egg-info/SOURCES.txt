@@ -1,0 +1,16 @@
+README.md
+setup.py
+product_service/__init__.py
+product_service/analytics.py
+product_service/ingest_products.py
+product_service/ingestor.py
+product_service/loader.py
+product_service.egg-info/PKG-INFO
+product_service.egg-info/SOURCES.txt
+product_service.egg-info/dependency_links.txt
+product_service.egg-info/top_level.txt
+product_service/utils/__init__.py
+product_service/utils/config.py
+product_service/utils/logging_setup.py
+tests/test_analytics.py
+tests/test_loader.py

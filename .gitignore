@@ -1,0 +1,23 @@
+# Bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtualenv
+venv/
+.env
+
+# Logs
+product_service.log
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Docker
+*.tar
