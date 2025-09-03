@@ -294,29 +294,75 @@ Top 5 Expensive Products:
 
 {
   "products": [
-    {"name": "Laptop Pro", "price": 1299.99, "category": "electronics", ...},
-    {"name": "Gaming PC", "price": 1199.99, "category": "electronics", ...}
+    {
+      "category": "electronics",
+      "created_at": "2025-09-03T09:59:00.109430",
+      "name": "MediumSlateBlue You 3367",
+      "price": 985.24,
+      "product_id": "2108ec46-7453-4377-8d31-da7d4e158074"
+    },
+    {
+      "category": "toys",
+      "created_at": "2025-09-03T09:59:00.109831",
+      "name": "DarkKhaki Same 4171",
+      "price": 982.86,
+      "product_id": "1ea02925-c7df-4c07-b53a-6edb9a1fb907"
+    }
   ]
-}
+}}
 
 Search for Products by Name:
 
 {
   "products": [
-    {"name": "Phone XYZ", "price": 499.99, "category": "electronics", ...}
+    {
+      "category": "garden",
+      "created_at": "2025-09-03T09:59:00.109108",
+      "name": "Blue Trade 5630",
+      "price": 281.39,
+      "product_id": "dcfc1e5c-b067-444c-96d3-687c97385b95"
+    }
   ]
 }
-
 
 Category Stats:
 
 {
   "category_stats": {
-    "electronics": {"count": 10, "avg_price": 450.5},
-    "books": {"count": 5, "avg_price": 120.0}
+    "beauty": {
+      "avg_price": 345.241657892863,
+      "count": 6
+    },
+    "books": {
+      "avg_price": 627.555000305176,
+      "count": 8
+    },
+    "electronics": {
+      "avg_price": 595.287997436524,
+      "count": 10
+    },
+    "fashion": {
+      "avg_price": 551.989336140951,
+      "count": 15
+    },
+    "garden": {
+      "avg_price": 494.044003295898,
+      "count": 5
+    },
+    "home": {
+      "avg_price": 497.539993286133,
+      "count": 3
+    },
+    "sports": {
+      "avg_price": 309.232496261597,
+      "count": 4
+    },
+    "toys": {
+      "avg_price": 602.529998779297,
+      "count": 4
+    }
   }
 }
-
 
 
 
