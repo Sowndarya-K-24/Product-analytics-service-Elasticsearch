@@ -1,0 +1,9 @@
+{
+  "query": {
+    "match": {
+      "category": "electronics"
+    }
+  },
+  "_source": ["product_id", "name", "category", "price"],
+  "size": 5
+}

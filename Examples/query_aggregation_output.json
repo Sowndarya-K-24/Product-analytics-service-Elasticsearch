@@ -1,0 +1,139 @@
+{
+    "took":  6,
+    "timed_out":  false,
+    "_shards":  {
+                    "total":  1,
+                    "successful":  1,
+                    "skipped":  0,
+                    "failed":  0
+                },
+    "hits":  {
+                 "total":  {
+                               "value":  55,
+                               "relation":  "eq"
+                           },
+                 "max_score":  1.0,
+                 "hits":  [
+                              {
+                                  "_index":  "products",
+                                  "_id":  "a49e79f2-c2c5-4f27-8516-5f04c4e1a873",
+                                  "_score":  1.0,
+                                  "_source":  {
+                                                  "product_id":  "a49e79f2-c2c5-4f27-8516-5f04c4e1a873",
+                                                  "name":  "LightCoral Home 1554",
+                                                  "category":  "home",
+                                                  "price":  826.2,
+                                                  "created_at":  "2025-09-03T09:59:00.105177"
+                                              }
+                              },
+                              {
+                                  "_index":  "products",
+                                  "_id":  "dcfc1e5c-b067-444c-96d3-687c97385b95",
+                                  "_score":  1.0,
+                                  "_source":  {
+                                                  "product_id":  "dcfc1e5c-b067-444c-96d3-687c97385b95",
+                                                  "name":  "Blue Trade 5630",
+                                                  "category":  "garden",
+                                                  "price":  281.39,
+                                                  "created_at":  "2025-09-03T09:59:00.109108"
+                                              }
+                              },
+                              {
+                                  "_index":  "products",
+                                  "_id":  "44664ca6-3c57-4ad4-82a1-d39e5e5a3e43",
+                                  "_score":  1.0,
+                                  "_source":  {
+                                                  "product_id":  "44664ca6-3c57-4ad4-82a1-d39e5e5a3e43",
+                                                  "name":  "LightSkyBlue Current 8224",
+                                                  "category":  "books",
+                                                  "price":  414.87,
+                                                  "created_at":  "2025-09-03T09:59:00.109160"
+                                              }
+                              },
+                              {
+                                  "_index":  "products",
+                                  "_id":  "0100490a-5d3f-4fa8-a708-4a573c940122",
+                                  "_score":  1.0,
+                                  "_source":  {
+                                                  "product_id":  "0100490a-5d3f-4fa8-a708-4a573c940122",
+                                                  "name":  "MediumOrchid First 2971",
+                                                  "category":  "toys",
+                                                  "price":  476.89,
+                                                  "created_at":  "2025-09-03T09:59:00.109188"
+                                              }
+                              },
+                              {
+                                  "_index":  "products",
+                                  "_id":  "e020ae37-11fd-4937-8bb1-cf906acc5ceb",
+                                  "_score":  1.0,
+                                  "_source":  {
+                                                  "product_id":  "e020ae37-11fd-4937-8bb1-cf906acc5ceb",
+                                                  "name":  "White Decade 393",
+                                                  "category":  "toys",
+                                                  "price":  535.31,
+                                                  "created_at":  "2025-09-03T09:59:00.109215"
+                                              }
+                              },
+                              {
+                                  "_index":  "products",
+                                  "_id":  "b0b6404d-d6f3-4bda-acd5-931d52bf062d",
+                                  "_score":  1.0,
+                                  "_source":  {
+                                                  "product_id":  "b0b6404d-d6f3-4bda-acd5-931d52bf062d",
+                                                  "name":  "Black Film 3914",
+                                                  "category":  "beauty",
+                                                  "price":  729.11,
+                                                  "created_at":  "2025-09-03T09:59:00.109239"
+                                              }
+                              },
+                              {
+                                  "_index":  "products",
+                                  "_id":  "659fe8e4-fe58-464f-bad2-e9e74a39c939",
+                                  "_score":  1.0,
+                                  "_source":  {
+                                                  "product_id":  "659fe8e4-fe58-464f-bad2-e9e74a39c939",
+                                                  "name":  "PaleGreen Soldier 3098",
+                                                  "category":  "sports",
+                                                  "price":  223.61,
+                                                  "created_at":  "2025-09-03T09:59:00.109263"
+                                              }
+                              },
+                              {
+                                  "_index":  "products",
+                                  "_id":  "77984a30-3e94-4fe8-b06a-83428db23a9c",
+                                  "_score":  1.0,
+                                  "_source":  {
+                                                  "product_id":  "77984a30-3e94-4fe8-b06a-83428db23a9c",
+                                                  "name":  "MediumTurquoise Part 7751",
+                                                  "category":  "electronics",
+                                                  "price":  169.9,
+                                                  "created_at":  "2025-09-03T09:59:00.109290"
+                                              }
+                              },
+                              {
+                                  "_index":  "products",
+                                  "_id":  "8dbe9e80-400e-457a-94f0-32cc406a11ef",
+                                  "_score":  1.0,
+                                  "_source":  {
+                                                  "product_id":  "8dbe9e80-400e-457a-94f0-32cc406a11ef",
+                                                  "name":  "MidnightBlue Gas 5858",
+                                                  "category":  "fashion",
+                                                  "price":  702.18,
+                                                  "created_at":  "2025-09-03T09:59:00.109314"
+                                              }
+                              },
+                              {
+                                  "_index":  "products",
+                                  "_id":  "fca276ff-9875-4b45-a21a-13e813895429",
+                                  "_score":  1.0,
+                                  "_source":  {
+                                                  "product_id":  "fca276ff-9875-4b45-a21a-13e813895429",
+                                                  "name":  "Lime Again 7978",
+                                                  "category":  "fashion",
+                                                  "price":  182.88,
+                                                  "created_at":  "2025-09-03T09:59:00.109337"
+                                              }
+                              }
+                          ]
+             }
+}

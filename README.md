@@ -80,7 +80,7 @@ product-analytics-service/
 
 1. **Clone the repo**
 
-git clone <your-repo-url>
+git clone - https://github.com/Sowndarya-K-24/Product-analytics-service-Elasticsearch
 cd product-analytics-service
 
 
