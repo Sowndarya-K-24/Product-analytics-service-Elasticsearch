@@ -12,7 +12,7 @@ def _default_mapping() -> Dict[str, Any]:
         "mappings": {
             "properties": {
                 "product_id": {"type": "keyword"},
-                "name": {"type": "text"},  # standard analyzer
+                "name": {"type": "text"},  
                 "category": {"type": "keyword"},
                 "price": {"type": "float"},
                 "created_at": {
@@ -32,7 +32,6 @@ class ESIngestor:
         logger.debug("ESIngestor initialized (host=%s index=%s)", host, index)
 
     def ensure_index(self) -> bool:
-        """Ensure index exists with mapping. Returns True if created or already exists."""
         try:
             exists = self.client.indices.exists(index=self.index)
             if exists:
@@ -47,7 +46,6 @@ class ESIngestor:
             raise
 
     def ingest(self, products: List[Dict[str, Any]], refresh: bool = False) -> int:
-        """Bulk ingest products. Returns number of items successfully indexed."""
         if not products:
             logger.warning("No products to ingest")
             return 0
@@ -72,7 +70,6 @@ class ESIngestor:
             raise
 
     def insert_one(self, product: Dict[str, Any]) -> Dict[str, Any]:
-        """Index a single product document. Returns ES response."""
         try:
             doc_id = product.get("product_id")
             res = self.client.index(index=self.index, id=doc_id, document=product)

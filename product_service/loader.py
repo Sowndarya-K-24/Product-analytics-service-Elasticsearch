@@ -27,7 +27,6 @@ def _normalize_row(row: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def load_from_csv(path: str) -> List[Dict[str, Any]]:
-    """Load products from a CSV file. Returns list of normalized product dicts."""
     p = Path(path)
     logger.info("Loading products from CSV: %s", path)
     if not p.exists():
@@ -46,7 +45,6 @@ def load_from_csv(path: str) -> List[Dict[str, Any]]:
 
 
 def load_from_json(path: str) -> List[Dict[str, Any]]:
-    """Load products from a JSON file. JSON can be a list or a dict with 'products' key."""
     p = Path(path)
     logger.info("Loading products from JSON: %s", path)
     if not p.exists():
